@@ -6,6 +6,8 @@ const options = {
     useUnifiedTopology: true
 }
 
+console.log(dbConnection)
+
 mongoose.connect(dbConnection,options,(error)=>{
     if(error){
         console.log(error)
