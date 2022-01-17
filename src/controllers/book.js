@@ -1,5 +1,5 @@
 const Book = require('../models/book');
-exports.retrieveBooks = retrieveBooks = (req,res) =>{
-    console.log(req.params.id)
-    res.status(200).send()
+exports.retrieveBooks = retrieveBooks = async (req,res) =>{
+    const books = await Book.find();
+    res.status(200).send(books)
 }

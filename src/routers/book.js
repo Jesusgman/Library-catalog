@@ -3,6 +3,6 @@ const {retrieveBooks} = require('../controllers/book');
 
 const router = express.Router();
 
-router.get('/books/:id',retrieveBooks);
+router.get('/books',retrieveBooks);
 
 module.exports = router;
