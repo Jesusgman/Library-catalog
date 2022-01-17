@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/Jesusgman/Library-catalog/issues"
   },
-  "homepage": "https://github.com/Jesusgman/Library-catalog#readme"
+  "homepage": "https://github.com/Jesusgman/Library-catalog#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.1",
+    "dotenv": "^13.0.0",
+    "express": "^4.17.2",
+    "https": "^1.0.0",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
