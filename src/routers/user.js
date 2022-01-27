@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/user/createAccount',createUserAccount);
 router.post('/user/login',authenticateUser);
-router.post('/user/logout',validateAuth,logout)
+router.post('/user/logout',validateAuth,logout);
 router.get('/user',validateAuth,getAccountInformation);
 router.delete('/user',validateAuth,deleteAccount);
 

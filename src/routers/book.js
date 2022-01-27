@@ -1,8 +1,10 @@
 const express = require('express');
-const {retrieveBooks} = require('../controllers/book');
+const {retrieveBooks, registerNewBook} = require('../controllers/book');
+const {validateAuth} = require("../middleware/auth")
 
 const router = express.Router();
 
-router.get('/books',retrieveBooks);
+router.post('/books',validateAuth,registerNewBook)
+router.get('/books',validateAuth,retrieveBooks);
 
 module.exports = router;

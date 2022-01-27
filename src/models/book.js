@@ -4,12 +4,14 @@ const bookSchema = new Schema({
     title: {
         type: String,
         required: true,
+        unique: true,
         validate(value){
             return value.length > 5;
         }
     },
     author: {
-        type: Schema.Types.ObjectId, ref: 'User'
+        type: Schema.Types.ObjectId, ref: 'User',
+        required: true
     },
     publicationDate: {
         type: Date,

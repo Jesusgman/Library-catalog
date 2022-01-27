@@ -1,5 +1,3 @@
-const res = require('express/lib/response');
-const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 exports.createUserAccount = async(req,res) => {

@@ -1,20 +1,8 @@
 require('dotenv').config();
 require('./db/mongoose.js');
-const express = require('express');
-const bodyParser = require('body-parser');
-const bookRoutes = require('./routers/book');
-const userRoutes = require('./routers/user');
+const app = require("./app")
 const fs = require('fs');
-const app = express();
 const port = process.env.PORT;
-
-app.use(express.json());
-app.use(bookRoutes);
-app.use(userRoutes);
-
-app.get('/',(req,res)=>{
-    res.status(200).send('hey');
-});
 
 const https = require('https')
 https.createServer({
