@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const {Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -71,6 +71,6 @@ userSchema.statics.findByCredentials = async(email,password)=>{
     }
 }
 
-const User = mongoose.model('User', userSchema); //This needs to go at the end
+const User = model('User', userSchema); //This needs to go at the end
 
 module.exports = User;

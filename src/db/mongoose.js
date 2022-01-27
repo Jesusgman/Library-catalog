@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-const dbConnection = process.env.DB_CONNECTION;
+const dbConnection = process.env.LOCAL_CONNECTION ? process.env.LOCAL_DB_CONNECTION : process.env.DB_CONNECTION;
 
 const options = {
     useNewUrlParser:true,
     useUnifiedTopology: true
 }
-
-console.log(dbConnection)
 
 mongoose.connect(dbConnection,options,(error)=>{
     if(error){
