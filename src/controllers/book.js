@@ -7,13 +7,12 @@ exports.registerNewBook = async(req,res)=>{
         const {title, publicationDate} = req.body;
         const book = new Book({author: req.user._id,editorial: editorial._id, title, publicationDate});
         await book.populate("author editorial");
-        await book.save();
+        const response = await book.save();
         res.status(201).send(book);
     } catch(e){
         res.status(500).send({message: e.message})
     }
 }
-
 
 exports.retrieveBooks = async (req,res) =>{
     const books = await Book.find();
