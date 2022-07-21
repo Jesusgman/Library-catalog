@@ -6,8 +6,6 @@ exports.registerNewBook = async(req,res)=>{
         const editorial = await Editorial.findOne({name:req.body.editorial});
         const {title, publicationDate} = req.body;
         const book = new Book({author: req.user._id,editorial: editorial._id, title, publicationDate});
-        await book.populate("author editorial");
-        const response = await book.save();
         res.status(201).send(book);
     } catch(e){
         res.status(500).send({message: e.message})
